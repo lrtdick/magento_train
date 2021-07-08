@@ -3,6 +3,7 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
         <route id="email" frontName="email">
+<!--           这里frontName有点迷 emailsearch能生效 直接search不生效-->
             <module name="Aaxis_Practice"/>
         </route>
     </router>
