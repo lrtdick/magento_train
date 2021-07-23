@@ -45,12 +45,12 @@ class User extends Template
         $collection->addFieldToFilter('email', ['eq' => $email])
             ->setPageSize(1);
         $user = $collection->getFirstItem();
+        $user->new='didnt pass after listener';
         if ($user) {
             return $user;
         } else {
             return null;
         }
-        return $user;
     }
 
 }

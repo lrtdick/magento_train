@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--        https://blog.csdn.net/weixin_33836874/article/details/89427501-->
+<!--配置完成后还需要执行两句命令：-->
+<!--        php bin/magento setup:di:compile-->
+<!--        php bin/magento setup:upgrade-->
+
+
+
+<!--<config>-->
+<!--    <type name="[ObservedType]">          [ObservedType] - 插件需要改写的目标类。包含空间名，如 Magento\Customer\Model\Resource\Visitor-->
+<!--        <plugin name="[pluginName]"    [pluginName] - 插件名 唯一。全站同一个域内唯一，如 catalogLog-->
+<!--                type="[PluginClassName]" [PluginClassName] - 插件类。包含空间名，如 Magento\Catalog\Model\Plugin\Log-->
+<!--                sortOrder="1"   sortOrder - 执行顺序。当同一个类有多个插件时，根据这个参数决定插件的执行顺序-->
+<!--                disabled="true" /> disabled - 该参数为 true 时不执行该插件-->
+<!--    </type>-->
+<!--</config>-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Aaxis\Practice\Block\Index\User">
+        <plugin name="after_get_data_add_some_word"
+                type="Aaxis\Practice\Block\Index\UserPlugin"
+                sortOrder="1"
+                disabled="false" />
+    </type>
+</config>
